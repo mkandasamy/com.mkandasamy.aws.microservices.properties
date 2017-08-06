@@ -22,4 +22,4 @@ eureka:
     lease-renewal-interval-in-seconds: 6
     lease-expiration-duration-in-seconds: 10
 logging:
-  file: /www/logs/${spring.application.name}/spring-boot-logging.log
+  file: /home/ec2-user/www/logs/${spring.application.name}/spring-boot-logging.log
