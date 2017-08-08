@@ -13,8 +13,8 @@ eureka:
       region1: zone1,zone2
     region: region1
     service-url:
-      zone1: ${EUREKA_URL_ZONE1}/eureka/
-      zone2: ${EUREKA_URL_ZONE2}/eureka/
+      zone1: ${EUREKA_URL_ZONE1}
+      zone2: ${EUREKA_URL_ZONE2}
       eureka-service-url-poll-interval-seconds: 10
   instance:
     #prefer-ip-address: true
