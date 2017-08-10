@@ -1,0 +1,34 @@
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: /api
+  
+spring:
+  jackson:
+    serialization:
+      indent-output: true
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    availability-zones:
+      region1: zone1,zone2
+    region: region1
+    service-url:
+      zone1: ${LOAD_BALANCER_URL}/zone1/eureka
+      zone2: ${LOAD_BALANCER_URL}/zone2/eureka
+      eureka-service-url-poll-interval-seconds: 10
+  instance:
+    #prefer-ip-address: true
+    #instance-id: ${spring.application.name}:${server.port}
+    lease-renewal-interval-in-seconds: 6
+    lease-expiration-duration-in-seconds: 10
+  dashboard:
+    enabled: true
+    path: /ui
+logging:
+  file: /www/logs/${spring.application.name}/spring-boot-logging.log
+  
+zuul:
+  prefix: /api
+  sensitiveHeaders:
