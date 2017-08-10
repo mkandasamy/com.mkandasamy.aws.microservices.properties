@@ -23,9 +23,6 @@ eureka:
     #instance-id: ${spring.application.name}:${server.port}
     lease-renewal-interval-in-seconds: 6
     lease-expiration-duration-in-seconds: 10
-  dashboard:
-    enabled: true
-    path: /ui
 logging:
   file: /www/logs/${spring.application.name}/spring-boot-logging.log
   
