@@ -24,15 +24,11 @@ eureka:
 logging:
   file: /www/logs/${spring.application.name}/spring-boot-logging.log
   
-aws:
-  microservices:
-    sample:
-      support:
-        auth:
-          token-public-key-file: aws.microservices.sample.support.auth.public.cert
-          restricted-path: /api/**
-          permitted-path: /*, /api/aws-microservices-sample-support-auth/**
-  
-zuul:
-  prefix: /api
-  sensitiveHeaders:
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 15000

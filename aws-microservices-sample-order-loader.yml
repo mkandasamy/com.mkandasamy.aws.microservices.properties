@@ -5,6 +5,23 @@ spring:
   jackson:
     serialization:
       indent-output: true
+  cloud:
+    stream:
+      binders:
+        rabbits:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: ${QUEUE_HOST_URL}
+                port: ${QUEUE_HOST_PORT}
+      default-binder: rabbits
+      bindings: 
+        orderChannel:
+          destination: work.exchange
+          content-type: application/json
+          group: ordergroup
+          
 eureka:
   client:
     register-with-eureka: true
@@ -23,16 +40,3 @@ eureka:
     lease-expiration-duration-in-seconds: 10
 logging:
   file: /www/logs/${spring.application.name}/spring-boot-logging.log
-  
-aws:
-  microservices:
-    sample:
-      support:
-        auth:
-          token-public-key-file: aws.microservices.sample.support.auth.public.cert
-          restricted-path: /api/**
-          permitted-path: /*, /api/aws-microservices-sample-support-auth/**
-  
-zuul:
-  prefix: /api
-  sensitiveHeaders:

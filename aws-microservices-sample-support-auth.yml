@@ -1,5 +1,6 @@
 server:
   port: ${SERVER_PORT:8080}
+  context-path: /auth
   
 spring:
   jackson:
@@ -29,10 +30,14 @@ aws:
     sample:
       support:
         auth:
-          token-public-key-file: aws.microservices.sample.support.auth.public.cert
-          restricted-path: /api/**
-          permitted-path: /*, /api/aws-microservices-sample-support-auth/**
+          client-id: donald
+          client-secret: duck
+          client-scope: WEB
+          token-secret: disney
+          token-key: jwt
+          token-private-key-file: aws.microservices.sample.support.auth.private.cert
+          reader-user: minnie
+          reader-password: mouse
+          writer-user: mickey
+          writer-password: mouse
   
-zuul:
-  prefix: /api
-  sensitiveHeaders:

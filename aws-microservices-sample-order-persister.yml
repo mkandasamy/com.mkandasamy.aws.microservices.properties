@@ -5,6 +5,14 @@ spring:
   jackson:
     serialization:
       indent-output: true
+  datasource:
+    url: ${DATABASE_WRITE_URL}
+    username: ${DATABASE_WRITE_USER}
+    password: ${DATABASE_WRITE_PASSWORD}
+  #jpa:
+    #hibernate:
+      #ddl-auto: create
+    
 eureka:
   client:
     register-with-eureka: true
@@ -23,16 +31,3 @@ eureka:
     lease-expiration-duration-in-seconds: 10
 logging:
   file: /www/logs/${spring.application.name}/spring-boot-logging.log
-  
-aws:
-  microservices:
-    sample:
-      support:
-        auth:
-          token-public-key-file: aws.microservices.sample.support.auth.public.cert
-          restricted-path: /api/**
-          permitted-path: /*, /api/aws-microservices-sample-support-auth/**
-  
-zuul:
-  prefix: /api
-  sensitiveHeaders:
