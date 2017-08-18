@@ -33,10 +33,10 @@ aws:
           client-id: donald
           client-secret: duck
           client-scope: WEB
-          token-secret: disney
+          token-secret: minnie
           token-key: jwt
           token-private-key-file: aws.microservices.sample.support.auth.private.cert
-          reader-user: minnie
+          reader-user: donald
           reader-password: mouse
           writer-user: mickey
           writer-password: mouse
