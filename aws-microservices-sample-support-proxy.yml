@@ -31,7 +31,7 @@ aws:
         auth:
           token-public-key-file: aws.microservices.sample.support.auth.public.cert
           restricted-path: /api/**
-          permitted-path: /*, /api/api/aws-microservices-sample-support-auth/**
+          permitted-path: /*, /api/aws-microservices-sample-support-auth/**
   
 zuul:
   prefix: /api

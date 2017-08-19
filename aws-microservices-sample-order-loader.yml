@@ -5,23 +5,7 @@ spring:
   jackson:
     serialization:
       indent-output: true
-  cloud:
-    stream:
-      binders:
-        rabbits:
-          type: rabbit
-          environment:
-            spring:
-              rabbitmq:
-                host: ${QUEUE_HOST_URL}
-                port: ${QUEUE_HOST_PORT}
-      default-binder: rabbits
-      bindings: 
-        orderChannel:
-          destination: work.exchange
-          content-type: application/json
-          group: ordergroup
-          
+
 eureka:
   client:
     register-with-eureka: true
@@ -40,3 +24,12 @@ eureka:
     lease-expiration-duration-in-seconds: 10
 logging:
   file: /www/logs/${spring.application.name}/spring-boot-logging.log
+  
+cloud:
+  aws:
+    region:
+      auto: true
+    credentials:
+      instanceProfile: true
+    sqs:
+      queue-name: ${ORDER_QUEUE_NAME}

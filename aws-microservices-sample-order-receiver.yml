@@ -40,3 +40,12 @@ eureka:
     lease-expiration-duration-in-seconds: 10
 logging:
   file: /www/logs/${spring.application.name}/spring-boot-logging.log
+  
+cloud:
+  aws:
+    region:
+      auto: true
+    credentials:
+      instanceProfile: true
+    sqs:
+      queue-name: ${ORDER_QUEUE_NAME}
