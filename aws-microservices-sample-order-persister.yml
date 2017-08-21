@@ -9,9 +9,9 @@ spring:
     url: ${DATABASE_WRITE_URL}
     username: ${DATABASE_WRITE_USER}
     password: ${DATABASE_WRITE_PASSWORD}
-  #jpa:
-    #hibernate:
-      #ddl-auto: create
+  jpa:
+    hibernate:
+      ddl-auto: create
     
 eureka:
   client:
