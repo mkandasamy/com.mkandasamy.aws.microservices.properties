@@ -1,7 +1,8 @@
 server:
   port: ${SERVER_PORT:8080}
-  servlet:
-    context-path: /api
+  context-path: /auth
+  
+  
 spring:
   jackson:
     serialization:
@@ -30,13 +31,17 @@ aws:
     sample:
       support:
         auth:
-          token-public-key-file: aws.microservices.sample.support.auth.public.cert
-          restricted-path: /api/**
-          permitted-path: /*, /api/aws-microservices-sample-support-auth/**
+          client-id: donald
+          client-secret: duck
+          client-scope: WEB
+          token-secret: minnie
+          token-key: jwt
+          token-private-key-file: aws.microservices.sample.support.auth.private.cert
+          reader-user: donald
+          reader-password: mouse
+          writer-user: mickey
+          writer-password: mouse
   
-zuul:
-  prefix: /api
-  sensitiveHeaders:
 
 hystrix:
   command:
@@ -49,17 +54,10 @@ hystrix:
 ribbon:
   ReadRimeout: 15000
   ConnectTimeout: 15000
-  
-zuul:
-  host:
-    connect-timeout-millis: 15000 # starting the connection 
-    socket-timeout-millis: 15000  # monitor the continuous incoming data flow
-    
-    
+
 aws:
   microservices:
     sample:
       common:
         load-weight: 0.1
         load-duration: 100
-        
