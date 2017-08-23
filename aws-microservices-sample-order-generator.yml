@@ -32,3 +32,10 @@ hystrix:
           strategy: THREAD
           thread:
             timeoutInMilliseconds: 15000
+
+aws:
+  microservices:
+    sample:
+      common:
+        load-weight: 0.1
+        load-duration: 1000

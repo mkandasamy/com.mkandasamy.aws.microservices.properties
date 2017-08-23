@@ -54,3 +54,10 @@ hystrix:
 ribbon:
   ReadRimeout: 15000
   ConnectTimeout: 15000
+
+aws:
+  microservices:
+    sample:
+      common:
+        load-weight: 0.1
+        load-duration: 1000

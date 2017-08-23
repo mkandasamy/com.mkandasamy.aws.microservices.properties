@@ -34,5 +34,11 @@ aws:
     sample:
       common:
         load-weight: 0.1
-        load-duration: 100
-      
+        load-duration: 1000
+
+aws:
+  microservices:
+    sample:
+      common:
+        load-weight: 0.1
+        load-duration: 1000
