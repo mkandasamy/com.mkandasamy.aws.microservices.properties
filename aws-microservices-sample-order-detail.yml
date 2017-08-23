@@ -18,8 +18,8 @@ eureka:
       region1: zone1,zone2
     region: region1
     service-url:
-      zone1: ${LOAD_BALANCER_URL}/zone1/eureka
-      zone2: ${LOAD_BALANCER_URL}/zone2/eureka
+      zone1: ${LOAD_BALANCER_URL:http://localhost:10201}}/zone1/eureka
+      zone2: ${LOAD_BALANCER_URL:http://localhost:10202}}/zone2/eureka
       eureka-service-url-poll-interval-seconds: 10
   instance:
     prefer-ip-address: true
