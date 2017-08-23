@@ -46,6 +46,7 @@ hystrix:
           strategy: THREAD
           thread:
             timeoutInMilliseconds: 15000
+            
 ribbon:
   ReadRimeout: 15000
   ConnectTimeout: 15000
@@ -54,12 +55,3 @@ zuul:
   host:
     connect-timeout-millis: 15000 # starting the connection 
     socket-timeout-millis: 15000  # monitor the continuous incoming data flow
-    
-    
-aws:
-  microservices:
-    sample:
-      common:
-        load-weight: 0.1
-        load-duration: 100
-        
