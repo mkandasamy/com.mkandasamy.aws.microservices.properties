@@ -46,7 +46,6 @@ hystrix:
           strategy: THREAD
           thread:
             timeoutInMilliseconds: 15000
-            
 ribbon:
   ReadRimeout: 15000
   ConnectTimeout: 15000
