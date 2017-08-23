@@ -10,7 +10,7 @@ spring:
     username: ${DATABASE_WRITE_USER}
     password: ${DATABASE_WRITE_PASSWORD}
   #jpa:
-   # hibernate:
+    #hibernate:
       #ddl-auto: create
 
 eureka:
