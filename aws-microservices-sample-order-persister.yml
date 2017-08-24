@@ -34,8 +34,8 @@ logging:
   
 datasource:
     dbcp2:
-      max-total: 100
+      max-total: 20
       max-wait-millis: 10000
       log-abandoned: true
-      max-idle: 40
-      min-idle: 10
+      max-idle: 10
+      min-idle: 5
