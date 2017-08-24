@@ -31,3 +31,11 @@ eureka:
     lease-expiration-duration-in-seconds: 10
 logging:
   file: /www/logs/${spring.application.name}/spring-boot-logging.log
+  
+datasource:
+    dbcp2:
+      max-total: 100
+      max-wait-millis: 10000
+      log-abandoned: true
+      max-idle: 40
+      min-idle: 10
