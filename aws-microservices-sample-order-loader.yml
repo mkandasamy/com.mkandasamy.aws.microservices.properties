@@ -33,10 +33,3 @@ cloud:
       instanceProfile: true
     sqs:
       queue-name: ${ORDER_QUEUE_NAME}
-
-aws:
-  microservices:
-    sample:
-      common:
-        load-weight: 0.1
-        load-duration: 100

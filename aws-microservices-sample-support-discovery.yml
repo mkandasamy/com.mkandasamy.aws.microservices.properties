@@ -29,16 +29,3 @@ eureka:
 logging:
   file: /www/logs/${spring.application.name}/spring-boot-logging.log
   
-aws:
-  microservices:
-    sample:
-      common:
-        load-weight: 0.1
-        load-duration: 100
-
-aws:
-  microservices:
-    sample:
-      common:
-        load-weight: 0.1
-        load-duration: 100
