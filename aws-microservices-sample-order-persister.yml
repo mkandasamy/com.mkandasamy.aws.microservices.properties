@@ -9,6 +9,19 @@ spring:
     url: ${DATABASE_WRITE_URL}
     username: ${DATABASE_WRITE_USER}
     password: ${DATABASE_WRITE_PASSWORD}
+    datasource:
+      tomcat:
+        initial-size: 10
+        log-abandoned: true
+        max-idle: 50
+        min-idle: 10
+      dbcp2:
+        initial-size: 10
+        max-total: 100
+        max-wait-millis: 10000
+        log-abandoned: true
+        max-idle: 50
+        min-idle: 10
   jpa:
     hibernate:
       ddl-auto: update
@@ -31,11 +44,3 @@ eureka:
     lease-expiration-duration-in-seconds: 10
 logging:
   file: /www/logs/${spring.application.name}/spring-boot-logging.log
-  
-datasource:
-    dbcp2:
-      max-total: 20
-      max-wait-millis: 10000
-      log-abandoned: true
-      max-idle: 10
-      min-idle: 5
