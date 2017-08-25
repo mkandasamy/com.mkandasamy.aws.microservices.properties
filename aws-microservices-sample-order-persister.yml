@@ -20,7 +20,7 @@ spring:
         max-total: 100
         max-wait-millis: 10000
         log-abandoned: true
-        max-idle: 50
+        max-idle: 90
         min-idle: 10
   jpa:
     hibernate:
