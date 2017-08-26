@@ -11,9 +11,9 @@ spring:
     password: ${DATABASE_WRITE_PASSWORD}
     datasource:
       tomcat:
-        initial-size: 10
+        initial-size: 100
         log-abandoned: true
-        max-idle: 50
+        max-idle: 190
         min-idle: 10
       dbcp2:
         initial-size: 10
