@@ -17,10 +17,10 @@ spring:
         min-idle: 10
       dbcp2:
         initial-size: 10
-        max-total: 100
+        max-total: 200
         max-wait-millis: 10000
         log-abandoned: true
-        max-idle: 90
+        max-idle: 190
         min-idle: 10
   jpa:
     hibernate:
